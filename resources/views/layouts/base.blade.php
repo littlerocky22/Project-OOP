@@ -11,10 +11,10 @@
     <title>Homepage</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="{{asset('css/shop-homepage.css')}}" rel="stylesheet">
 
   </head>
 
@@ -83,9 +83,11 @@
 
           <h1 class="my-4">Shop Name</h1>
           <div class="list-group">
-            <a href="#" class="list-group-item">Category 1</a>
-            <a href="#" class="list-group-item">Category 2</a>
-            <a href="#" class="list-group-item">Category 3</a>
+		  @foreach($v_catalogs as $cat)
+		  <a href="{{asset('products/'.$cat->id)}}"  class="list-group-item">
+		  {{$cat->name}}
+		  </a>
+		  @endforeach
           </div>
 
         </div>
@@ -111,8 +113,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   </body>
 

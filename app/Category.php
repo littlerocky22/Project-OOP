@@ -34,7 +34,9 @@ class Category extends Model {
         Category::observe(new UserActionsObserver);
     }
     
-    
+    public function products(){
+	return $this->hasMany('App\Product','category_id');
+	}
     
     
 }

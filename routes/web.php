@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('products/{catalog_id}','ProductController@getProducts');
 Route::get('{url}', 'PageController@getIndex'); //последний !
