@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BaseController@getIndex');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('products/{catalog_id}','ProductController@getProducts');
 Route::get('product/{id}','ProductController@getOne');
+Route::get('/basket','BasketController@getIndex');
+Route::get('/basket/delete/{id}','BasketController@getDelete');
 Route::get('{url}', 'PageController@getIndex'); //последний !

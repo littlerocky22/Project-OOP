@@ -13,8 +13,8 @@ class ProductController extends Controller
 
 	}
 public function getOne($id){
-	$obj=Product::find($id);
-	return view('product',compact('obj'));
+	$one=Product::find($id);
+	return view('product',compact('one'));
 }
 }
 
