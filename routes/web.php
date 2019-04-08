@@ -20,4 +20,5 @@ Route::get('products/{catalog_id}','ProductController@getProducts');
 Route::get('product/{id}','ProductController@getOne');
 Route::get('/basket','BasketController@getIndex');
 Route::get('/basket/delete/{id}','BasketController@getDelete');
+Route::post('basket/order','OrderController@postIndex');
 Route::get('{url}', 'PageController@getIndex'); //последний !
